@@ -1,0 +1,12 @@
+# jogl-samples
+
+OpenGL application samples using java language
+
+=== Tools:
+- Java 17
+- Gradle
+- JOGL 2.4.0-rc-20210111
+
+=== Attention: 
+JOGL dependencies are in the libs folder, 
+they are mandatory if you don't have JOGL library path set in your environment variable 
