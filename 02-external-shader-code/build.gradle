@@ -1,0 +1,16 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation files( '../lib/jogamp-fat.jar', '../lib/jogamp-fat-test.jar' )
+}
+
+sourceSets {
+    if( Os.isFamily( Os.FAMILY_WINDOWS ) )
+        main.java.srcDirs = [ 'src\\' ]
+    else
+        main.java.srcDirs = [ 'src/' ]
+}
