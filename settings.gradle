@@ -1,0 +1,12 @@
+plugins {
+    // Apply the foojay-resolver plugin to allow automatic download of JDKs
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+}
+
+rootProject.name = 'jogl-samples'
+include('00-skeleton')
+include('01-hard-coded-shaders')
+include('02-external-shader-code')
+include('03-triangle')
+include('04-animation')
+include('05-grow-n-shrink')

@@ -1,11 +1,8 @@
 import org.apache.tools.ant.taskdefs.condition.Os
 
 plugins {
+	id 'application'
     id 'java'
-}
-
-dependencies {
-    implementation files( '../lib/jogamp-fat.jar', '../lib/jogamp-fat-test.jar' )
 }
 
 sourceSets {
@@ -13,4 +10,23 @@ sourceSets {
         main.java.srcDirs = [ 'src\\' ]
     else
         main.java.srcDirs = [ 'src/' ]
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'io.github.gxrj.Sample'
+}
+
+repositories {
+
+	maven {
+		url "https://jogamp.org/deployment/maven/"
+	}
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.jogamp.jogl/jogl-all-main
+    implementation 'org.jogamp.jogl:jogl-all-main:2.5.0'
+    // https://mvnrepository.com/artifact/org.jogamp.gluegen/gluegen-rt-main
+    implementation 'org.jogamp.gluegen:gluegen-rt-main:2.5.0'
 }
